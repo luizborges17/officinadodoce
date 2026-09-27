@@ -12,6 +12,21 @@ npm run build
 
 O servidor informa a URL local. A versão publicável fica em `dist/`; publique essa pasta em hospedagem estática com HTTPS. `npm run preview` permite conferir o build.
 
+## Deploy na Cloudflare Workers
+
+O projeto inclui `wrangler.jsonc` para servir os arquivos estáticos de `dist/`, sem Worker de backend.
+
+Na integração com Git da Cloudflare, configure:
+
+- Diretório raiz: a raiz deste projeto.
+- Comando de build: `npm run build`.
+- Comando de deploy: `npx wrangler deploy`.
+- Nome do Worker: `officina-do-doce`, igual ao campo `name` de `wrangler.jsonc`. Se o Worker já criado tiver outro nome, ajuste esse campo para corresponder a ele.
+
+Envie `wrangler.jsonc`, `package.json` e `package-lock.json` para o repositório antes de executar um novo deploy. Não é necessário versionar `dist/`.
+
+Para validar localmente sem publicar: `npm run deploy:check`. Para publicar manualmente em uma conta já autenticada: `npm run deploy`.
+
 ## Editar
 
 Os conteúdos estão em `src/config.js`: bem-casados, descrições, imagens, apresentação, WhatsApp, Instagram e região. Coloque as fotos em `public/images/bem-casados/` (também aceita subpastas). A lista `src/product-images.js` é gerada automaticamente ao iniciar o servidor, construir ou testar o projeto. Durante `npm run dev`, adicionar ou remover imagens também atualiza a lista. Em produção, gere um novo build e publique para incluir arquivos novos. Formatos: JPEG, JPG, JFIF, PNG, WebP, AVIF e GIF.
