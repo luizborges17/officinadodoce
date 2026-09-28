@@ -57,7 +57,7 @@ export const site = {
     detail: 'Na Officina do Doce, nossos bem-casados acompanham momentos especiais com delicadeza e cuidado em cada detalhe. Uma lembrança para compartilhar carinho com quem faz parte da sua história.'
   },
   products: [
-    { id: 'bem-casados', title: 'Bem-casados', description: 'Um gesto de carinho para compartilhar a felicidade de um novo começo. Conheça nossos bem-casados e encontre inspiração para a sua celebração.', images: productImages['bem-casados'] }
+    { id: 'bem-casados', title: 'Bem-casados', description: 'Um gesto de carinho para compartilhar a felicidade de um novo começo. Conheça nossos bem-casados e encontre inspiração para a sua celebração.', flavorNote: 'Disponíveis nos sabores tradicional e laranja. O bem-casado de laranja é um lançamento original da Officina do Doce.', images: productImages['bem-casados'] }
   ]
 };
 
